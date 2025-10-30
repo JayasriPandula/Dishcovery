@@ -1,0 +1,288 @@
+/* ================= Base Layout ================= */
+.App {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fff7f0, #ffe6d9);
+  color: #333;
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+.dark {
+  background: linear-gradient(135deg, #121212, #1f1f1f);
+  color: #f1f1f1;
+}
+
+/* ================= Header ================= */
+.site-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.logo {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #ff7043;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.tagline {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.dark-btn {
+  background: linear-gradient(135deg, #ff7043, #ff9966);
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 25px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.dark-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 112, 67, 0.4);
+}
+
+/* ================= Highlight Section ================= */
+.highlight {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 550px;
+  box-shadow: 0 4px 12px rgba(255, 112, 67, 0.2);
+  transition: all 0.3s ease;
+}
+
+.highlight:hover {
+  box-shadow: 0 6px 18px rgba(255, 112, 67, 0.35);
+}
+
+.highlight img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+/* ================= Search Box ================= */
+.search-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+
+.search-box input,
+.search-box select {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+  border-color: #ff7043;
+  box-shadow: 0 0 5px rgba(255, 112, 67, 0.4);
+}
+
+.search-box button {
+  background: linear-gradient(135deg, #ff7043, #ff9966);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.search-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 112, 67, 0.4);
+}
+
+/* ================= Recipe Cards ================= */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.recipe-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(255, 112, 67, 0.4);
+}
+
+.recipe-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+}
+
+.view-btn {
+  background: linear-gradient(135deg, #ff7043, #ff9966);
+  color: white;
+  padding: 0.6rem 1.3rem;
+  border-radius: 25px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.5rem;
+  box-shadow: 0 3px 8px rgba(255, 112, 67, 0.3);
+}
+
+.view-btn:hover {
+  background: linear-gradient(135deg, #ff5722, #ff8a50);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 87, 34, 0.5);
+}
+.ingredients-section {
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.ingredients-section ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  color: #333;
+}
+
+.dark .ingredients-section ul {
+  color: #ddd;
+}
+
+
+/* ================= Modal ================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  border-radius: 14px;
+  padding: 1.8rem;
+  width: 90%;
+  max-width: 650px;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+  text-align: left;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #ff7043;
+  cursor: pointer;
+}
+
+.instructions {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.voice-controls {
+  margin-top: 1.5rem;
+  background: #fff7e6;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.voice-controls label {
+  font-weight: 500;
+}
+
+.read-btn {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background: #ff7043;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.read-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(255, 112, 67, 0.3);
+}
+
+.read-btn.stop {
+  background: #444;
+}
+.search-box select {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+}
+
+.search-box select:focus {
+  border-color: #ff7043;
+  box-shadow: 0 0 5px rgba(255, 112, 67, 0.3);
+}
+
+/* ================= Footer ================= */
+.site-footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.site-footer a {
+  color: #ff7043;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
